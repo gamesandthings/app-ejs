@@ -1,10 +1,9 @@
 <html lang="en">
   <head>
-    <base href="https://cdn.jsdelivr.net/gh/gamesandthings/app-ejs@main/ds/nsmb/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NDS</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/app-ejs/style.css" />
   </head>
   <body>
     <h1 id="status">Loading...</h1>
@@ -72,10 +71,10 @@
             return originalOpen.call(this, method, url, ...rest);
           };
           let data = document.createElement("script");
-          data.src = "data.js";
+          data.src = "/app-ejs/ds/nsmb/data.js";
           document.body.appendChild(data);
           let runner = document.createElement("script");
-          runner.src = "/data/loader.js";
+          runner.src = "/app-ejs/data/loader.js";
           document.body.appendChild(runner);
           document.getElementById("status").remove();
         })
