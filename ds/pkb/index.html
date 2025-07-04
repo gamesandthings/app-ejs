@@ -42,19 +42,19 @@
         return parts;
       }
 
-      mergeFiles(getParts("game.data", 1, 14))
+      mergeFiles(getParts("pkb.data", 1, 14))
         .then(async (url) => {
           window.gameBlob = url;
 
           const originalFetch = window.fetch;
           window.fetch = async function (...args) {
             let [url, options] = args;
-            if (typeof url === "string" && url.includes("game.data")) {
+            if (typeof url === "string" && url.includes("pkb.data")) {
               console.log("fetch:", url);
               url = window.gameBlob;
             } else if (
               url instanceof Request &&
-              url.url.includes("game.data")
+              url.url.includes("pkb.data")
             ) {
               console.log("fetch request:", url.url);
               url = new Request(window.gameBlob, url);
@@ -64,7 +64,7 @@
 
           const originalOpen = XMLHttpRequest.prototype.open;
           XMLHttpRequest.prototype.open = function (method, url, ...rest) {
-            if (url.includes("game.data")) {
+            if (url.includes("pkb.data")) {
               console.log("XHR:", url);
               url = window.gameBlob;
             }
