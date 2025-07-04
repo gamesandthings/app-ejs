@@ -1,0 +1,21 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GB</title>
+    <link rel="stylesheet" href="/app-ejs/style.css" />
+  </head>
+  <body>
+    <h1 id="status">Loading...</h1>
+    <div id="game"></div>
+    <script>
+          let data = document.createElement("script");
+          data.src = "/app-ejs/gb/pkr/data.js";
+          document.body.appendChild(data);
+          let runner = document.createElement("script");
+          runner.src = "/app-ejs/data/loader.js";
+          document.body.appendChild(runner);
+          document.getElementById("status").remove();
+    </script>
+  </body>
+</html>
