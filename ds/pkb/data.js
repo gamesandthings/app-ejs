@@ -13,7 +13,7 @@ EJS_defaultOptions = {
 }
 
 
-EJS_pathtodata = "/data/";
+EJS_pathtodata = "/app-ejs/data/";
 EJS_player = "#game";
 EJS_color = "#242424";
 EJS_backgroundColor = "#000";
@@ -50,7 +50,7 @@ EJS_Buttons = {
     fullscreen: false,
     contextMenu: false,
 };
-EJS_biosUrl = ["/ds/bios7.bin","/ds/bios9.bin","/ds/firmware.bin"];
+EJS_biosUrl = ["/app-ejs/ds/bios7.bin","/app-ejs/ds/bios9.bin","/app-ejs/ds/firmware.bin"];
 EJS_gameUrl = window.gameBlob;
 
 window.addEventListener("mousemove", (ev) => {
